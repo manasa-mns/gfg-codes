@@ -2,18 +2,18 @@ import java.util.Arrays;
 class Solution {
     public int getSecondLargest(int[] arr) {
         // code here
-        int max=arr[0];
-        int prev=-1;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]>max){
-                prev=max;
-                max=arr[i];
-            }else if(prev<arr[i]&&arr[i]<max){
-                prev=arr[i];
+        Arrays.sort(arr);
+        int n=arr.length;
+        int max=arr[n-1];
+        for(int i=n-2;i>=0;i--){
+            if(arr[i]!=max){
+                return arr[i];
             }
-            
         }
-        return prev;
-      
+        return -1;
+        
+    
+        
+        
     }
 }
